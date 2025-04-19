@@ -89,7 +89,7 @@ section {
     padding: 80px 40px;  /* 增加水平内边距 */
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;  /* 从center修改为flex-start，使内容从顶部开始 */
     position: relative;
     border-radius: 20px;  /* 增加圆角 */
     margin-bottom: 30px;  /* 增加部分之间的间距 */
@@ -109,6 +109,37 @@ section::before {
     border-radius: 20px;  /* 匹配section的圆角 */
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);  /* 添加微妙阴影 */
+}
+
+/* 为每个section添加独特的淡色背景 */
+section#home::before {
+    background-color: rgba(231, 241, 252, 0.65);  /* 淡蓝色 */
+}
+
+section#news::before {
+    background-color: rgba(231, 241, 252, 0.65);  /* 淡绿色 */
+}
+
+section#publications::before {
+    background-color: rgba(231, 241, 252, 0.65);  /* 淡紫色 */
+}
+
+section#education::before {
+    background-color: rgba(231, 241, 252, 0.65);  /* 淡橙色 */
+}
+
+/* 确保文本在不同背景下保持可读性 */
+section h2 {
+    color: var(--primary-color);
+    position: relative;
+    z-index: 1;
+}
+
+/* 增强glass effect在不同背景色上的效果 */
+section.glass-effect::before {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.06);
 }
 
 /* Enhancement for content sections */
@@ -268,6 +299,15 @@ h3 {
     background: var(--light-gray);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     margin-bottom: 5px;
+}
+
+/* 论文之间的分隔线样式 */
+.publication-divider {
+    margin: 25px 0;
+    border: 0;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 113, 227, 0.2), rgba(255, 255, 255, 0));
 }
 
 .authors {
@@ -614,10 +654,20 @@ p {
 .contact-info.compact .contact-item {
     padding: 8px 0;
     margin-bottom: 5px;
+    display: flex;
+    align-items: center; /* 确保垂直居中对齐 */
+    gap: 15px;
 }
 
-.contact-info.compact i {
+.contact-info.compact .contact-item p {
+    margin: 0; /* 移除段落默认边距，避免干扰对齐 */
+    line-height: 1.4;
+}
+
+.contact-info.compact .contact-item i {
     font-size: 1.1rem;
+    width: 15px; /* 固定宽度确保所有图标对齐 */
+    text-align: center; /* 图标居中 */
 }
 
 /* 研究兴趣列表 */
