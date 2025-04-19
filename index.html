@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - Academic Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background elements -->
+    <div class="bg-elements">
+        <div class="bg-shape shape1"></div>
+        <div class="bg-shape shape2"></div>
+        <div class="bg-shape shape3"></div>
+        <div class="bg-shape shape4"></div>
+        <div class="bg-shape shape5"></div>
+    </div>
+    
+    <header>
+        <nav class="glass-effect">
+            <div class="logo">John Doe</div>
+            <ul class="nav-links">
+                <li class="nav-item active"><a href="#home" data-target="home"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item"><a href="#news" data-target="news"><i class="fas fa-newspaper"></i> News</a></li>
+                <li class="nav-item"><a href="#publications" data-target="publications"><i class="fas fa-book"></i> Publications</a></li>
+                <li class="nav-item"><a href="#education" data-target="education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+            </ul>
+        </nav>
+        <div class="nav-indicator"></div>
+    </header>
+
+    <main>
+        <section id="home" class="active section glass-effect">
+            <div class="container">
+                <div class="home-layout">
+                    <!-- 左侧：个人信息和简介 -->
+                    <div class="home-main">
+                        <div class="profile">
+                            <div class="profile-image">
+                                <img src="https://via.placeholder.com/200" alt="Profile Photo">
+                            </div>
+                            <div class="profile-info">
+                                <h1>John Doe</h1>
+                                <h2>MSc Student in Computer Science</h2>
+                                <p class="university">Department of Computer Science, University of Technology</p>
+                                <div class="tags">
+                                    <span>Machine Learning</span>
+                                    <span>Natural Language Processing</span>
+                                    <span>Computer Vision</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bio">
+                            <p>Welcome to my academic profile. I'm a Computer Science graduate student specializing in artificial intelligence and machine learning. My research focuses on developing novel machine learning algorithms for complex data analysis problems.</p>
+                            <p>As a research assistant at the AI Research Lab, I collaborate with faculty and industry partners on cutting-edge projects. My current work investigates explainability and robustness in deep learning models.</p>
+                        </div>
+                        
+                        <div class="stats">
+                            <div class="stat-item">
+                                <div class="stat-number">5+</div>
+                                <div class="stat-label">Publications</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">150+</div>
+                                <div class="stat-label">Citations</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">3+</div>
+                                <div class="stat-label">Research Projects</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 右侧：联系信息和研究方向简介 -->
+                    <div class="home-sidebar">
+                        <div class="sidebar-box">
+                            <h3>Contact</h3>
+                            <div class="contact-info compact">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <p>john.doe@university.edu</p>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <p>+1 (123) 456-7890</p>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <p>Department of Computer Science, University of Technology</p>
+                                </div>
+                            </div>
+                            <div class="social-links">
+                                <a href="#" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                                <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-box">
+                            <h3>Research Interests</h3>
+                            <ul class="interest-list">
+                                <li><i class="fas fa-brain"></i> Deep Learning</li>
+                                <li><i class="fas fa-comment-dots"></i> NLP</li>
+                                <li><i class="fas fa-eye"></i> Computer Vision</li>
+                                <li><i class="fas fa-network-wired"></i> Neural Networks</li>
+                                <li><i class="fas fa-robot"></i> AI Ethics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 新的新闻部分 -->
+        <section id="news" class="section glass-effect">
+            <div class="container">
+                <h2>Recent News</h2>
+                <div class="news-timeline">
+                    <div class="news-item">
+                        <div class="news-date">March 2025</div>
+                        <div class="news-content">
+                            <h3><i class="fas fa-award"></i> Best Paper Award</h3>
+                            <p>Received the Best Paper Award at the International Conference on Machine Learning (ICML) for our work on "Explainable AI Frameworks for Healthcare Applications".</p>
+                        </div>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-date">February 2025</div>
+                        <div class="news-content">
+                            <h3><i class="fas fa-newspaper"></i> Paper Accepted</h3>
+                            <p>Our paper "Deep Learning Methods for Medical Image Segmentation" has been accepted to the Conference on Computer Vision and Pattern Recognition (CVPR 2025).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-date">January 2025</div>
+                        <div class="news-content">
+                            <h3><i class="fas fa-microphone"></i> Talk at AI Symposium</h3>
+                            <p>Gave an invited talk on "The Future of Transformer Models in Healthcare" at the International Symposium on AI in Medicine.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-date">December 2024</div>
+                        <div class="news-content">
+                            <h3><i class="fas fa-trophy"></i> Research Grant</h3>
+                            <p>Secured a $50,000 research grant for our project on "Developing Privacy-Preserving Machine Learning Techniques for Healthcare Data".</p>
+                        </div>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-date">November 2024</div>
+                        <div class="news-content">
+                            <h3><i class="fas fa-users"></i> New Collaboration</h3>
+                            <p>Started a new collaborative project with researchers from Stanford University on multi-modal learning for clinical decision support systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="section glass-effect">
+            <div class="container">
+                <h2>Selected Publications</h2>
+                <div class="publications-list">
+                    <div class="publication">
+                        <h3>Explainability in Deep Learning Models</h3>
+                        <p class="authors">Doe, J., Smith, A., Johnson, B.</p>
+                        <p class="venue">Conference on Artificial Intelligence (AAAI), 2024</p>
+                        <div class="publication-links">
+                            <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
+                            <a href="#"><i class="fas fa-code"></i> Code</a>
+                        </div>
+                    </div>
+                    <div class="publication">
+                        <h3>Efficient Neural Network Training for Large-Scale Data</h3>
+                        <p class="authors">Doe, J., Williams, C.</p>
+                        <p class="venue">Neural Information Processing Systems (NeurIPS), 2023</p>
+                        <div class="publication-links">
+                            <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
+                            <a href="#"><i class="fas fa-code"></i> Code</a>
+                        </div>
+                    </div>
+                    <div class="publication">
+                        <h3>Multimodal Deep Learning Framework for Medical Diagnosis</h3>
+                        <p class="authors">Doe, J., Brown, M., Davis, S.</p>
+                        <p class="venue">Computer Vision and Pattern Recognition (CVPR), 2022</p>
+                        <div class="publication-links">
+                            <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
+                            <a href="#"><i class="fas fa-code"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <a class="more-link" href="#">View All Publications <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section id="education" class="section glass-effect">
+            <div class="container">
+                <h2>Education & Academic Experience</h2>
+                <div class="courses">
+                    <div class="course">
+                        <h3>MSc in Computer Science</h3>
+                        <p>Specialization in Artificial Intelligence and Machine Learning</p>
+                        <p>Thesis: "Advanced Neural Networks for Natural Language Understanding"</p>
+                        <p class="semester">University of Technology, 2022-2024</p>
+                    </div>
+                    <div class="course">
+                        <h3>BSc in Computer Science</h3>
+                        <p>Minor in Mathematics</p>
+                        <p>Graduated with First Class Honors</p>
+                        <p class="semester">State University, 2018-2022</p>
+                    </div>
+                    <div class="course">
+                        <h3>Research Assistant</h3>
+                        <p>Working with Prof. Smith on deep learning models for medical image analysis</p>
+                        <p>Contributed to 2 journal papers and 3 conference publications</p>
+                        <p class="semester">AI Research Lab, 2022-Present</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-effect">
+        <p>&copy; 2025 John Doe - Last updated April 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
