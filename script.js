@@ -3,13 +3,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const navIndicator = document.querySelector('.nav-indicator');
     
-    // Initialize nav indicator position
+    // 更新导航指示器位置的函数
     function setNavIndicatorPosition(element) {
         if (!element || !navIndicator) return;
         
         const parent = element.parentElement;
+        const navLinks = document.querySelector('.nav-links');
+        
+        // 计算相对于导航栏的位置
         navIndicator.style.width = `${parent.offsetWidth}px`;
         navIndicator.style.left = `${parent.offsetLeft}px`;
+        
+        // 添加一个小延迟确保过渡效果平滑
+        setTimeout(() => {
+            navIndicator.style.opacity = '1';
+        }, 50);
     }
     
     // Set initial position for nav indicator
