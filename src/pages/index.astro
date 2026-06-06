@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import News from '../components/News.astro';
+import Publications from '../components/Publications.astro';
+import Experience from '../components/Experience.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base>
+  <Nav />
+
+  <!-- 主内容区域容器 -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 overflow-hidden">
+    <Hero />
+
+    <hr class="border-var my-8" />
+
+    <News />
+
+    <Publications />
+
+    <hr class="border-var my-8" />
+
+    <Experience />
+  </main>
+
+  <Footer />
+</Base>

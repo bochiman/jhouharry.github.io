@@ -1,0 +1,75 @@
+---
+import { personal } from '../data/personal';
+import { nav } from '../data/nav';
+---
+
+<!-- 导航栏 -->
+<nav id="navbar" class="fixed w-full z-50 transition-all duration-300 border-b border-transparent">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <!-- 左侧：姓名 -->
+      <div class="flex-shrink-0 flex items-center">
+        <a href="#" class="font-serif font-bold text-xl text-primary-var hover:text-secondary-var transition-colors gradient-text">
+          <span class="lang-en">{personal.name}</span>
+          <span class="lang-zh">{personal.nameZh}</span>
+        </a>
+      </div>
+      <!-- 右侧：导航链接 (桌面端) -->
+      <div class="hidden md:flex space-x-4 items-center">
+        {
+          nav.map((item) => (
+            <a href={item.href} class="text-muted-var hover:text-primary-var px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <span class="lang-en">{item.en}</span>
+              <span class="lang-zh">{item.zh}</span>
+            </a>
+          ))
+        }
+
+        <!-- 语言切换按钮 -->
+        <a href="#" class="lang-toggle-btn text-muted-var hover:text-primary-var px-3 py-2 rounded-md text-sm font-medium transition-colors border border-var hover-neon-glow flex items-center gap-1 cursor-pointer">
+          <i class="fas fa-language text-lg"></i>
+          <span class="lang-en">中</span>
+          <span class="lang-zh">EN</span>
+        </a>
+
+        <!-- 主题切换按钮 -->
+        <a href="#" class="theme-toggle-btn text-muted-var hover:text-primary-var px-3 py-2 rounded-md text-sm font-medium transition-colors border border-var hover-neon-glow cursor-pointer">
+          <i class="fas fa-moon dark-icon hidden"></i>
+          <i class="fas fa-sun light-icon"></i>
+        </a>
+
+        <!-- 简历下载按钮 -->
+        <a href="#" class="gradient-btn border border-primary-var text-primary-var hover:bg-primary-var hover:text-bg-main px-4 py-2 rounded-md text-sm font-bold transition-all ml-2 shadow-sm">
+          <i class="fas fa-file-pdf mr-1"></i> <span class="lang-en">CV</span><span class="lang-zh">简历</span>
+        </a>
+      </div>
+
+      <!-- 移动端菜单按钮 -->
+      <div class="md:hidden flex items-center gap-3">
+        <a href="#" class="theme-toggle-btn text-muted-var hover:text-primary-var text-sm font-medium">
+          <i class="fas fa-sun light-icon"></i>
+          <i class="fas fa-moon dark-icon hidden"></i>
+        </a>
+        <a href="#" class="lang-toggle-btn text-muted-var hover:text-primary-var text-sm font-medium">
+          <i class="fas fa-language text-xl"></i>
+        </a>
+        <button id="mobile-menu-btn" class="text-muted-var hover:text-primary-var focus:outline-none ml-2">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- 移动端下拉菜单 -->
+  <div id="mobile-menu" class="hidden md:hidden bg-card-var border-t border-var">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      {
+        nav.map((item) => (
+          <a href={item.href} class="block px-3 py-2 rounded-md text-base font-medium text-muted-var hover:text-primary-var">
+            <span class="lang-en">{item.en}</span>
+            <span class="lang-zh">{item.zh}</span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</nav>

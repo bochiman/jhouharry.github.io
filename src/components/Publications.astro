@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets';
+import { personal } from '../data/personal';
+import { publications } from '../data/publications';
+---
+
+<!-- 论文发表 (Publications) -->
+<section id="publications" class="py-8 reveal">
+  <h2 class="text-2xl font-bold mb-6 flex items-center gap-2 gradient-text">
+    <i class="fas fa-book-open text-secondary-var text-xl"></i>
+    <span class="lang-en">Publications</span>
+    <span class="lang-zh">论文发表</span>
+  </h2>
+
+  <div class="space-y-6">
+    {
+      publications.map((p) => (
+        <div class="pub-card bg-card-var rounded-xl shadow-sm border border-var p-5 transition-all duration-500 flex flex-col md:flex-row gap-5">
+          {p.image && (
+            <div class="w-full md:w-1/4 flex-shrink-0 hidden sm:block overflow-hidden rounded-lg">
+              <Image
+                src={p.image}
+                alt={p.title}
+                class="w-full h-auto rounded-lg border border-var transition-transform duration-500 hover:scale-110 object-cover"
+              />
+            </div>
+          )}
+          <div class="flex-1">
+            <h3 class="text-lg font-bold mb-1">
+              {p.titleHref ? (
+                <a href={p.titleHref} class="text-primary-var hover:text-secondary-var hover:underline">
+                  {p.title}
+                </a>
+              ) : (
+                <span class="text-primary-var">{p.title}</span>
+              )}
+            </h3>
+            <p class="text-sm text-main-var mb-2 font-medium" set:html={p.authors} />
+            <p class="text-sm text-muted-var mb-3 italic">
+              <span class="lang-en" set:html={p.venueEn} />
+              <span class="lang-zh" set:html={p.venueZh} />
+            </p>
+            {(p.abstractEn || p.abstractZh) && (
+              <div class="text-sm text-muted-var mb-3 text-justify line-clamp-2 hover:line-clamp-none transition-all">
+                <span class="lang-en">{p.abstractEn}</span>
+                <span class="lang-zh">{p.abstractZh}</span>
+              </div>
+            )}
+            {p.links.length > 0 && (
+              <div class="flex flex-wrap gap-2 mt-auto">
+                {p.links.map((l) => (
+                  <a
+                    href={l.href}
+                    {...(l.href.startsWith('http') ? { target: '_blank' } : {})}
+                    class="inline-flex items-center px-3 py-1 border border-var rounded text-xs font-medium text-main-var bg-card-var hover:bg-var hover:border-var hover:shadow-sm transition-all hover-neon-glow"
+                  >
+                    <i class={`${l.icon} mr-1`} /> {l.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="mt-6 text-center">
+    <a href={personal.scholar} target="_blank" class="text-secondary-var hover:text-primary-var font-medium inline-flex items-center transition-colors group">
+      <span class="lang-en">View full publication list on Google Scholar</span>
+      <span class="lang-zh">查看完整的出版物列表 (Google Scholar)</span>
+      <i class="fas fa-arrow-right ml-1 text-sm transform transition-transform group-hover:translate-x-1"></i>
+    </a>
+  </div>
+</section>

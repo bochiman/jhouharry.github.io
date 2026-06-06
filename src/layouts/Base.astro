@@ -1,0 +1,140 @@
+---
+import '../assets/styles/global.css';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Zichen Zhou - Academic Portfolio' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<!-- 默认语言为英文 -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+
+    <!-- Google Fonts: Fira Code (极客代码体) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome 图标库 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="antialiased font-sans">
+    <slot />
+
+    <!-- 交互脚本 -->
+    <script is:inline>
+      // 1. 自动更新页脚年份
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+
+      // 2. 移动端菜单切换逻辑
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+
+      // 3. 导航栏滚动效果
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+          navbar.classList.add('nav-scrolled');
+        } else {
+          navbar.classList.remove('nav-scrolled');
+        }
+      });
+
+      // 4. 平滑滚动修正
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          menu.classList.add('hidden');
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            const navHeight = navbar.offsetHeight;
+            const targetPosition =
+              targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+          }
+        });
+      });
+
+      // 5. 滚动揭示动画
+      const revealElements = document.querySelectorAll('.reveal');
+      const revealOptions = { root: null, threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+      const revealOnScroll = new IntersectionObserver(function (entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, revealOptions);
+      revealElements.forEach((el) => revealOnScroll.observe(el));
+
+      // 6. 多语言切换逻辑 (Language Toggle)
+      const langBtns = document.querySelectorAll('.lang-toggle-btn');
+      function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        localStorage.setItem('preferred-lang', lang);
+      }
+      function toggleLanguage(e) {
+        e.preventDefault();
+        const currentLang = document.documentElement.lang;
+        const newLang = currentLang === 'en' ? 'zh-CN' : 'en';
+        setLanguage(newLang);
+      }
+      langBtns.forEach((btn) => btn.addEventListener('click', toggleLanguage));
+
+      const savedLang = localStorage.getItem('preferred-lang');
+      if (savedLang) setLanguage(savedLang);
+
+      // 7. 主题切换逻辑 (Theme Toggle)
+      const themeBtns = document.querySelectorAll('.theme-toggle-btn');
+      const rootElement = document.documentElement;
+
+      function setTheme(isLight) {
+        if (isLight) {
+          rootElement.classList.add('theme-light');
+          document.querySelectorAll('.light-icon').forEach((i) => i.classList.add('hidden'));
+          document.querySelectorAll('.dark-icon').forEach((i) => i.classList.remove('hidden'));
+        } else {
+          rootElement.classList.remove('theme-light');
+          document.querySelectorAll('.dark-icon').forEach((i) => i.classList.add('hidden'));
+          document.querySelectorAll('.light-icon').forEach((i) => i.classList.remove('hidden'));
+        }
+        localStorage.setItem('preferred-theme', isLight ? 'light' : 'dark');
+      }
+
+      function toggleTheme(e) {
+        e.preventDefault();
+        const isCurrentlyLight = rootElement.classList.contains('theme-light');
+        setTheme(!isCurrentlyLight);
+      }
+
+      themeBtns.forEach((btn) => btn.addEventListener('click', toggleTheme));
+
+      const savedTheme = localStorage.getItem('preferred-theme');
+      // 默认深色
+      if (savedTheme === 'light') {
+        setTheme(true);
+      } else {
+        setTheme(false);
+      }
+    </script>
+  </body>
+</html>
