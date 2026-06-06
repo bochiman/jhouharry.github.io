@@ -51,7 +51,7 @@ export const publications: Publication[] = [
   },
   {
     title: 'GLUE: Global-Local Unified Encoding for Imitation Learning via Key-Patch Tracking',
-    authors: 'Includes <strong>Zichen Zhou</strong>',
+    authors: 'Ye Chen, Zichen Zhou, Jianyu Dou, Te Cui, Yi Yang, Yufeng Yue',
     venueEn: 'In Preparation / Under Review',
     venueZh: '在投 / 审稿中',
     image: glue,
