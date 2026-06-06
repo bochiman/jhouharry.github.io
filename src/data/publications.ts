@@ -1,4 +1,5 @@
 import type { ImageMetadata } from 'astro';
+import unifiedLatentAction from '../assets/images/publications/unified-latent-action.png';
 import cordvip from '../assets/images/publications/cordvip.png';
 import seeOnceThenAct from '../assets/images/publications/see-once-then-act.png';
 import glue from '../assets/images/publications/glue.png';
@@ -22,6 +23,20 @@ export interface Publication {
 }
 
 export const publications: Publication[] = [
+  {
+    title: 'Learning a Unified Latent Action Space from Videos with Action-centric Cycle Consistency',
+    titleHref: 'https://arxiv.org/abs/2605.05950',
+    authors:
+      'G Chen, Q Shao, T Cui, <strong>Zichen Zhou</strong>, W Mao, L Yang, M Wang, Y Yang, H Chen, Y Yue*',
+    venueEn:
+      'IEEE/CVF Conference on Computer Vision and Pattern Recognition (<span class="font-bold text-secondary-var">CVPR</span>), 2026.',
+    venueZh:
+      'IEEE/CVF Conference on Computer Vision and Pattern Recognition (<span class="font-bold text-secondary-var">CVPR</span>), 2026.',
+    image: unifiedLatentAction,
+    links: [
+      { icon: 'fas fa-file-pdf text-red-500', label: 'arXiv', href: 'https://arxiv.org/abs/2605.05950' },
+    ],
+  },
   {
     title: 'CordViP: Correspondence-based Visuomotor Policy for Dexterous Manipulation in Real-World',
     titleHref: '#',

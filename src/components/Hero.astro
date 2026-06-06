@@ -26,11 +26,22 @@ import { personal } from '../data/personal';
       <span class="lang-en">{personal.title}</span>
       <span class="lang-zh">{personal.titleZh}</span>
     </p>
-    <div class="mb-6 text-base text-main-var opacity-80 flex items-center justify-center md:justify-start gap-2">
+    <div class="mb-4 text-base text-main-var opacity-80 flex items-center justify-center md:justify-start gap-2">
       <i class="fas fa-terminal text-secondary-var transform transition-transform hover:scale-125"></i>
       <span>
         <span class="lang-en">{personal.institution}</span>
         <span class="lang-zh">{personal.institutionZh}</span>
+      </span>
+    </div>
+    <div class="mb-6 text-base text-main-var opacity-80 flex items-center justify-center md:justify-start gap-2">
+      <i class="fas fa-user-graduate text-secondary-var"></i>
+      <span>
+        <span class="lang-en">
+          Advisor: <a href={personal.advisor.href} target="_blank" class="text-secondary-var hover:text-primary-var hover:underline transition-colors">{personal.advisor.name}</a>
+        </span>
+        <span class="lang-zh">
+          导师：<a href={personal.advisor.href} target="_blank" class="text-secondary-var hover:text-primary-var hover:underline transition-colors">{personal.advisor.nameZh}</a> 教授
+        </span>
       </span>
     </div>
 

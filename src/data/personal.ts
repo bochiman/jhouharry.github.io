@@ -7,6 +7,12 @@ export interface SocialLink {
   href: string;
 }
 
+export interface Advisor {
+  name: string;
+  nameZh: string;
+  href: string;
+}
+
 export interface Personal {
   name: string;
   nameZh: string;
@@ -14,6 +20,7 @@ export interface Personal {
   titleZh: string;
   institution: string;
   institutionZh: string;
+  advisor: Advisor;
   avatar: ImageMetadata;
   scholar: string;
   bio: string;
@@ -28,12 +35,18 @@ export const personal: Personal = {
   titleZh: '大四本科生',
   institution: 'Beijing Institute of Technology',
   institutionZh: '北京理工大学',
+  advisor: {
+    name: 'Yufeng Yue',
+    nameZh: '岳裕丰',
+    href: 'https://yfyue-bit.github.io/',
+  },
   avatar,
   scholar: 'https://scholar.google.com/citations?user=4ztoqYYAAAAJ&hl=zh-CN',
   bio: 'Hi! I am a senior undergraduate student at Beijing Institute of Technology. My research interests mainly focus on <strong>Embodied AI</strong> and <strong>Robotics</strong>, particularly developing <strong>Vision-Language-Action Models</strong> and <strong>Visuomotor Policies</strong> for dexterous manipulation in real-world scenarios.',
   bioZh: '您好！我是北京理工大学的一名大四本科生。我的主要研究兴趣集中在<strong>具身智能 (Embodied AI)</strong>和<strong>机器人学 (Robotics)</strong>。我致力于开发针对真实世界灵巧操作的<strong>视觉-语言-动作模型</strong>和<strong>视觉运动策略</strong>。',
   links: [
-    { icon: 'fas fa-envelope', label: 'Email', href: 'mailto:email@example.com' },
+    { icon: 'fas fa-envelope', label: 'Gmail', href: 'mailto:elijahjhou034@gmail.com' },
+    { icon: 'fas fa-envelope', label: 'BIT Email', href: 'mailto:1120223554@bit.edu.cn' },
     { icon: 'fas fa-graduation-cap', label: 'Google Scholar', href: 'https://scholar.google.com/citations?user=4ztoqYYAAAAJ&hl=zh-CN' },
     { icon: 'fab fa-github', label: 'GitHub', href: 'https://github.com' },
   ],
