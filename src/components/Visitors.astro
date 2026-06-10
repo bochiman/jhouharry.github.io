@@ -1,0 +1,66 @@
+---
+// 访客统计：不蒜子 (PV/UV) + Clustrmaps 地区地图
+// Clustrmaps：部署后在 https://clustrmaps.com 注册域名，将 embed 代码替换下方占位区块
+---
+
+<section id="visitors" class="py-8 reveal">
+  <h2 class="text-2xl font-bold mb-6 flex items-center gap-2 gradient-text">
+    <i class="fas fa-chart-line text-secondary-var text-xl"></i>
+    <span class="lang-en">Visitor Stats</span>
+    <span class="lang-zh">访客统计</span>
+  </h2>
+
+  <div class="bg-card-var rounded-xl shadow-sm border border-var p-6 transition-colors duration-300">
+    <!-- PV / UV 计数 (不蒜子) -->
+    <div class="flex flex-wrap items-center justify-center gap-6 mb-6 text-main-var">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-users text-secondary-var"></i>
+        <span class="text-sm">
+          <span class="lang-en">Unique visitors: </span>
+          <span class="lang-zh">独立访客 </span>
+          <span id="busuanzi_value_site_uv">—</span>
+          <span class="lang-zh"> 人</span>
+        </span>
+      </div>
+      <div class="hidden sm:block w-px h-4 bg-var"></div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-eye text-primary-var"></i>
+        <span class="text-sm">
+          <span class="lang-en">Page views: </span>
+          <span class="lang-zh">总访问量 </span>
+          <span id="busuanzi_value_site_pv">—</span>
+          <span class="lang-zh"> 次</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- 地区地图 (Clustrmaps) -->
+    <div class="flex flex-col items-center">
+      <p class="text-xs text-muted-var mb-3">
+        <span class="lang-en">Visitor locations</span>
+        <span class="lang-zh">访客地区分布</span>
+      </p>
+      <!--
+        TODO: 替换为 Clustrmaps 专属 embed 代码
+        1. 访问 https://clustrmaps.com
+        2. 输入域名 bochiman.github.io/jhouharry.github.io/
+        3. 复制 embed 代码粘贴到下方
+      -->
+      <div id="clustrmaps-widget" class="flex items-center justify-center min-h-[120px] w-full max-w-md rounded-lg border border-dashed border-var bg-bg-main/30">
+        <p class="text-xs text-muted-var text-center px-4">
+          <span class="lang-en">
+            <i class="fas fa-map-marked-alt mr-1"></i>
+            Map widget pending — register at
+            <a href="https://clustrmaps.com" target="_blank" class="text-secondary-var hover:underline">clustrmaps.com</a>
+          </span>
+          <span class="lang-zh">
+            <i class="fas fa-map-marked-alt mr-1"></i>
+            地图组件待配置 — 请前往
+            <a href="https://clustrmaps.com" target="_blank" class="text-secondary-var hover:underline">clustrmaps.com</a>
+            注册域名
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

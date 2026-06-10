@@ -12,23 +12,29 @@
     --color-border: #30363d;
 }
 
-/* 浅色主题：粉蓝梦幻风 (Light Pink & Blue Gradient) */
+/* 浅色主题：天蓝渐变风 (Sky Blue Gradient) */
 :root.theme-light {
-    --color-bg: #fdf2f8; /* 极淡的粉白底色 */
+    --color-bg: #e0f2fe; /* nav/scrollbar fallback（body 使用渐变） */
     --color-card: #ffffff;
     --color-primary: #ec4899; /* Pink */
     --color-secondary: #0ea5e9; /* Sky Blue */
     --color-text-main: #1f2937;
     --color-text-muted: #4b5563;
-    --color-border: #fce7f3; /* 淡粉色边框 */
+    --color-border: #bae6fd; /* 淡天蓝边框 */
 }
 
 /* 全局样式 */
 body {
-    background-color: var(--color-bg);
+    background: var(--color-bg);
     color: var(--color-text-main);
     line-height: 1.7;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background 0.5s ease, color 0.5s ease, opacity 0.2s ease;
+}
+
+/* 亮色模式：天蓝渐变背景 */
+:root.theme-light body {
+    background: linear-gradient(160deg, #bae6fd 0%, #e0f2fe 35%, #f0f9ff 65%, #dbeafe 100%);
+    background-attachment: fixed;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -90,6 +96,9 @@ html { scroll-behavior: smooth; }
     opacity: 0.95;
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--color-border);
+}
+:root.theme-light .nav-scrolled {
+    background-color: rgba(255, 255, 255, 0.85);
 }
 
 /* 卡片悬停效果 */

@@ -29,6 +29,9 @@ const { title = 'Zichen Zhou - Academic Portfolio' } = Astro.props;
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
+    <!-- 不蒜子访客统计 -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   </head>
 
   <body class="antialiased font-sans">
@@ -86,7 +89,7 @@ const { title = 'Zichen Zhou - Academic Portfolio' } = Astro.props;
       }, revealOptions);
       revealElements.forEach((el) => revealOnScroll.observe(el));
 
-      // 6. 多语言切换逻辑 (Language Toggle)
+      // 6. 多语言切换逻辑 (Language Toggle) — 全页淡入淡出
       const langBtns = document.querySelectorAll('.lang-toggle-btn');
       function setLanguage(lang) {
         document.documentElement.lang = lang;
@@ -96,7 +99,11 @@ const { title = 'Zichen Zhou - Academic Portfolio' } = Astro.props;
         e.preventDefault();
         const currentLang = document.documentElement.lang;
         const newLang = currentLang === 'en' ? 'zh-CN' : 'en';
-        setLanguage(newLang);
+        document.body.style.opacity = '0';
+        setTimeout(function () {
+          setLanguage(newLang);
+          document.body.style.opacity = '1';
+        }, 200);
       }
       langBtns.forEach((btn) => btn.addEventListener('click', toggleLanguage));
 
