@@ -1,14 +1,36 @@
+import type { ImageMetadata } from 'astro';
+import vitacCertificate from '../assets/images/awards/vitac-2026-certificate.jpg';
+
 export interface NewsItem {
   date: string;
   en: string;
   zh: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
 }
 
 export const news: NewsItem[] = [
   {
+    date: '2026',
+    en: '🎉 Our paper "FCAR: Force-Conditioned Action Residual Policies for Contact-Rich Manipulation" has been accepted!',
+    zh: '🎉 我们的论文 "FCAR: Force-Conditioned Action Residual Policies for Contact-Rich Manipulation" 中稿！',
+  },
+  {
+    date: '2026',
+    en: '🎉 Our paper "Learning a Unified Latent Action Space from Videos with Action-centric Cycle Consistency" was accepted by <strong class="text-primary-var">CVPR 2026</strong>!',
+    zh: '🎉 我们的论文 "Learning a Unified Latent Action Space from Videos with Action-centric Cycle Consistency" 被 <strong class="text-primary-var">CVPR 2026</strong> 接收！',
+  },
+  {
+    date: '2026',
+    en: '🎉 Our paper "GLUE" was accepted by <strong class="text-primary-var">IROS 2026</strong>!',
+    zh: '🎉 我们的论文 "GLUE" 被 <strong class="text-primary-var">IROS 2026</strong> 接收！',
+  },
+  {
     date: '2026.06',
     en: '🏆 Won <strong class="text-primary-var">1st Place</strong> at the <a href="https://callmeray.github.io/Mani_ViTac_Challenge_2026_page/index.html#leaderboard" target="_blank" class="text-secondary-var hover:underline">ManiSkill-ViTac Challenge 2026</a> at the CVPR 2026 Embodied AI Workshop!',
     zh: '🏆 在 CVPR 2026 Embodied AI Workshop 的 <a href="https://callmeray.github.io/Mani_ViTac_Challenge_2026_page/index.html#leaderboard" target="_blank" class="text-secondary-var hover:underline">ManiSkill-ViTac Challenge 2026</a> 中获得 <strong class="text-primary-var">冠军</strong>！',
+    image: vitacCertificate,
+    imageAlt: 'ManiSkill-ViTac Challenge 2026 1st Prize Certificate — BIT IN²Bot',
   },
   {
     date: '2025',

@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { news } from '../data/news';
 ---
 
@@ -9,14 +10,23 @@ import { news } from '../data/news';
     <span class="lang-en">Latest News</span><span class="lang-zh">最新动态</span>
   </h2>
   <div class="bg-card-var rounded-xl shadow-sm border border-var p-6 transition-colors duration-300">
-    <ul class="space-y-4 max-h-64 overflow-y-auto pr-2 custom-scrollbar">
+    <ul class="space-y-6 pr-2 custom-scrollbar">
       {
         news.map((n) => (
-          <li class="flex gap-4">
-            <div class="min-w-[90px] text-sm font-semibold text-secondary-var pt-1">{n.date}</div>
-            <div class="text-main-var">
+          <li class="flex flex-col sm:flex-row gap-4">
+            <div class="min-w-[90px] text-sm font-semibold text-secondary-var pt-1 shrink-0">{n.date}</div>
+            <div class="text-main-var flex-1 min-w-0">
               <span class="lang-en" set:html={n.en} />
               <span class="lang-zh" set:html={n.zh} />
+              {n.image && (
+                <div class="mt-4">
+                  <Image
+                    src={n.image}
+                    alt={n.imageAlt ?? ''}
+                    class="rounded-lg border border-var max-w-full h-auto shadow-md hover:shadow-lg transition-shadow duration-300"
+                  />
+                </div>
+              )}
             </div>
           </li>
         ))

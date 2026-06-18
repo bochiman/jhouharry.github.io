@@ -38,6 +38,23 @@ export const publications: Publication[] = [
     ],
   },
   {
+    title: 'GLUE: Global-Local Unified Encoding for Imitation Learning via Key-Patch Tracking',
+    titleHref: 'https://arxiv.org/abs/2509.23220',
+    authors: 'Y Chen, <strong>Zichen Zhou</strong>, J Dou, T Cui, Y Yang, Y Yue',
+    venueEn:
+      'IEEE/RSJ International Conference on Intelligent Robots and Systems (<span class="font-bold text-secondary-var">IROS</span>), 2026.',
+    venueZh:
+      'IEEE/RSJ International Conference on Intelligent Robots and Systems (<span class="font-bold text-secondary-var">IROS</span>), 2026.',
+    image: glue,
+    abstractEn:
+      'We propose GLUE, a global-local unified encoding framework for imitation learning based on key-patch tracking. By fusing global and local visual representations, GLUE steers attention toward task-relevant objects and improves policy robustness in cluttered and occluded settings.',
+    abstractZh:
+      '我们提出了 GLUE，一种基于关键点 patch 跟踪的全局-局部统一编码模仿学习框架。通过融合全局与局部视觉表征，GLUE 将注意力引导至任务相关物体，提升在杂乱与遮挡场景下的策略鲁棒性。',
+    links: [
+      { icon: 'fas fa-file-pdf text-red-500', label: 'arXiv', href: 'https://arxiv.org/abs/2509.23220' },
+    ],
+  },
+  {
     title: 'CordViP: Correspondence-based Visuomotor Policy for Dexterous Manipulation in Real-World',
     titleHref: '#',
     authors: 'Y Fu, Q Feng, N Chen, <strong>Zichen Zhou</strong>, M Liu, M Wu, T Chen, S Rong, J Liu',
@@ -63,13 +80,5 @@ export const publications: Publication[] = [
     links: [
       { icon: 'fas fa-file-pdf text-red-500', label: 'arXiv', href: 'https://arxiv.org/abs/2512.07582' },
     ],
-  },
-  {
-    title: 'GLUE: Global-Local Unified Encoding for Imitation Learning via Key-Patch Tracking',
-    authors: 'Ye Chen, Zichen Zhou, Jianyu Dou, Te Cui, Yi Yang, Yufeng Yue',
-    venueEn: 'In Preparation / Under Review',
-    venueZh: '在投 / 审稿中',
-    image: glue,
-    links: [],
   },
 ];
