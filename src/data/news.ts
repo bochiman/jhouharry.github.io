@@ -11,19 +11,14 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
-    date: '2026',
-    en: '🎉 Our paper "FCAR: Force-Conditioned Action Residual Policies for Contact-Rich Manipulation" has been accepted!',
-    zh: '🎉 我们的论文 "FCAR: Force-Conditioned Action Residual Policies for Contact-Rich Manipulation" 中稿！',
+    date: '2026.06',
+    en: '🎉 Two papers accepted by <strong class="text-primary-var">IROS 2026</strong>: "GLUE" and "FCAR: Force-Conditioned Action Residual Policies for Contact-Rich Manipulation"!',
+    zh: '🎉 两篇论文被 <strong class="text-primary-var">IROS 2026</strong> 接收："GLUE" 与 "FCAR: Force-Conditioned Action Residual Policies for Contact-Rich Manipulation"！',
   },
   {
-    date: '2026',
+    date: '2026.03',
     en: '🎉 Our paper "Learning a Unified Latent Action Space from Videos with Action-centric Cycle Consistency" was accepted by <strong class="text-primary-var">CVPR 2026</strong>!',
     zh: '🎉 我们的论文 "Learning a Unified Latent Action Space from Videos with Action-centric Cycle Consistency" 被 <strong class="text-primary-var">CVPR 2026</strong> 接收！',
-  },
-  {
-    date: '2026',
-    en: '🎉 Our paper "GLUE" was accepted by <strong class="text-primary-var">IROS 2026</strong>!',
-    zh: '🎉 我们的论文 "GLUE" 被 <strong class="text-primary-var">IROS 2026</strong> 接收！',
   },
   {
     date: '2026.06',
