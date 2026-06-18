@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import { awards } from '../data/awards';
+---
+
+<!-- 奖项 (Awards) -->
+<section id="awards" class="py-8 reveal">
+  <h2 class="text-2xl font-bold mb-6 flex items-center gap-2 gradient-text">
+    <i class="fas fa-trophy text-secondary-var text-xl"></i>
+    <span class="lang-en">Awards</span><span class="lang-zh">荣誉奖项</span>
+  </h2>
+  <div class="bg-card-var rounded-xl shadow-sm border border-var p-6 transition-colors duration-300">
+    <ul class="space-y-8">
+      {
+        awards.map((a) => (
+          <li class="flex flex-col sm:flex-row gap-4">
+            <div class="min-w-[90px] text-sm font-semibold text-secondary-var pt-1 shrink-0">{a.date}</div>
+            <div class="flex-1 min-w-0">
+              <p class="font-semibold text-main-var mb-1">
+                <span class="lang-en">{a.titleEn}</span>
+                <span class="lang-zh">{a.titleZh}</span>
+              </p>
+              <p class="text-sm text-muted-var">
+                <span class="lang-en" set:html={a.descEn} />
+                <span class="lang-zh" set:html={a.descZh} />
+              </p>
+              {a.image && (
+                <div class="mt-4 max-w-lg">
+                  <Image
+                    src={a.image}
+                    alt={a.imageAlt ?? ''}
+                    class="rounded-lg border border-var w-full h-auto shadow-md hover:shadow-lg transition-shadow duration-300"
+                  />
+                </div>
+              )}
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
